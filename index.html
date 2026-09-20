@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
 <title>Manual do Cão Que Vive Mais</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +19,8 @@
     --line:#DCE8DE;
     --shadow:rgba(34,48,31,0.13);
     --focus:#2C5E3A;
+    --warn:#B7511B;
+    --warn-soft:#FBEAE0;
   }
 
   *{box-sizing:border-box;}
@@ -76,7 +74,7 @@
   }
   .hairline{
     border:none;
-    border-top:1px dashed var(--line);
+    border-top:1px solid var(--line);
     margin:0;
   }
 
@@ -200,6 +198,11 @@
   }
   .ticket-scallop.bottom{transform:rotate(180deg);}
   .ticket-body{padding:12px 40px 36px;}
+  .ticket-mockup{
+    width:100%;
+    border-radius:12px;
+    margin:18px 0 26px;
+  }
   .ticket-title{
     text-align:center;
     font-family:'Inter', sans-serif;
@@ -237,7 +240,7 @@
 
   .ticket-divider{
     border:none;
-    border-top:1px dashed var(--line);
+    border-top:1px solid var(--line);
     margin:30px 0 26px;
   }
 
@@ -286,6 +289,127 @@
     margin-top:18px;
     justify-content:center;
   }
+  .how-it-works{
+    margin-top:28px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+  }
+  .how-title{
+    text-align:center;
+    font-weight:700;
+    font-size:14px;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .how-steps{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:340px;
+    margin:0 auto;
+  }
+  .how-steps li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .how-steps .num{
+    flex:none;
+    width:20px;height:20px;
+    border-radius:50%;
+    background:var(--green-soft);
+    color:var(--copper-deep);
+    font-weight:800;
+    font-size:12px;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ---------- vsl ---------- */
+  .vsl{padding:0 0 56px;}
+  .vsl-frame{
+    max-width:420px;
+    margin:0 auto;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 24px 48px -20px var(--shadow);
+    border:1px solid var(--line);
+    background:#000;
+  }
+  .vsl-frame video{
+    width:100%;
+    display:block;
+    aspect-ratio:9/16;
+    background:#000;
+  }
+  .vsl-caption{
+    text-align:center;
+    margin-top:14px;
+    font-size:13.5px;
+    color:var(--ink-faint);
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .vsl-actions{
+    max-width:420px;
+    margin:20px auto 0;
+    display:flex;
+    justify-content:center;
+  }
+
+  /* ---------- signals ---------- */
+  .signals{padding:20px 0 76px;}
+  .signals-head{max-width:640px;}
+  .signals-head h2{font-size:clamp(25px,3.4vw,33px);margin-top:10px;}
+  .signals-lead{
+    margin-top:14px;
+    font-size:16.5px;
+    color:var(--ink-soft);
+    max-width:60ch;
+  }
+  .signals-list{
+    list-style:none;
+    margin:32px 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    max-width:640px;
+  }
+  .signals-list li{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    font-size:15.5px;
+    color:var(--ink);
+  }
+  .warn-mark{
+    flex:none;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--warn-soft);
+    color:var(--warn);
+    font-weight:800;
+    font-size:13px;
+    display:flex;align-items:center;justify-content:center;
+    margin-top:1px;
+  }
+  .signals-close{
+    margin-top:30px;
+    max-width:640px;
+    padding:22px 24px;
+    background:var(--warn-soft);
+    border-left:4px solid var(--warn);
+    border-radius:8px;
+    font-size:15.5px;
+    color:var(--ink);
+    line-height:1.6;
+  }
 
   /* ---------- about ---------- */
   .about{
@@ -317,9 +441,9 @@
     flex-direction:column;
   }
   .faq-item{
-    border-top:1px dashed var(--line);
+    border-top:1px solid var(--line);
   }
-  .faq-item:last-child{border-bottom:1px dashed var(--line);}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
   .faq-item summary{
     list-style:none;
     cursor:pointer;
@@ -369,8 +493,10 @@
     gap:36px;
     align-items:center;
   }
-  .stamp{
+  .stamp-img{
     width:118px;height:118px;flex:none;
+    border-radius:50%;
+    object-fit:contain;
   }
   .guarantee-card h2{font-size:clamp(22px,2.8vw,27px);}
   .guarantee-card p{
@@ -424,7 +550,7 @@
   /* ---------- footer ---------- */
   footer.site{
     padding:26px 0 40px;
-    border-top:1px dashed var(--line);
+    border-top:1px solid var(--line);
   }
   .footer-row{
     display:flex;
@@ -453,8 +579,6 @@
     *{transition:none !important; animation:none !important;}
   }
 </style>
-</head>
-<body>
 
 <svg width="0" height="0" style="position:absolute">
   <symbol id="icon-check" viewBox="0 0 24 24" fill="none">
@@ -481,42 +605,32 @@
   </symbol>
 </svg>
 
-<header class="site">
-  <div class="wrap">
-    <div class="brandmark">
-      <svg class="seal-tiny" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="47" fill="none" stroke="var(--copper-deep)" stroke-width="2" stroke-dasharray="3 5"/>
-        <circle cx="50" cy="50" r="38" fill="var(--copper)"/>
-        <ellipse cx="50" cy="63" rx="19" ry="15" fill="var(--paper)"/>
-        <ellipse cx="27" cy="38" rx="8" ry="10.5" transform="rotate(-18 27 38)" fill="var(--paper)"/>
-        <ellipse cx="42" cy="27" rx="7.2" ry="9.5" fill="var(--paper)"/>
-        <ellipse cx="58" cy="27" rx="7.2" ry="9.5" fill="var(--paper)"/>
-        <ellipse cx="73" cy="38" rx="8" ry="10.5" transform="rotate(18 73 38)" fill="var(--paper)"/>
-      </svg>
-      Manual do Cão Que Vive Mais
-    </div>
-  </div>
-</header>
-
 <main>
   <!-- 1. HERO -->
   <section class="hero">
     <div class="wrap hero-grid">
-      <p class="eyebrow">Guia digital · 100 receitas caseiras</p>
-      <h1>Descubra como dar a seu cão os melhores anos de vida e estar junto dele por muito mais tempo.</h1>
-      <p class="hero-punch">Cada prato que ele come hoje é um voto a favor, ou contra, dos anos que vocês ainda vão ter juntos.</p>
+      <h1>Descubra Como Cuidar Melhor do Seu Cão de Forma Natural e Fazer Ele Viver Mais Anos ao Seu Lado.</h1>
+      <p class="hero-punch">100 receitas caseiras e cuidados simples pra dar mais saúde, mais energia e mais longevidade ao seu cão, sem depender de ultraprocessados.</p>
+    </div>
+  </section>
 
-      <div class="hero-actions">
+  <!-- 1A. VSL -->
+  <section class="vsl">
+    <div class="wrap">
+      <div class="vsl-frame">
+        <video
+          src="./assets/vsl-viktor.mp4"
+          poster="./assets/poster.jpg"
+          controls
+          playsinline
+          preload="metadata"
+        ></video>
+      </div>
+      <div class="hero-actions vsl-actions">
         <a href="https://pay.cakto.com.br/6mw9tjc_1100300" class="btn btn-primary">
-          QUERO PROTEGER MEU CÃO AGORA
+          QUERO O MANUAL AGORA
           <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <p class="micro-note">Pagamento único · sem mensalidade</p>
-        <div class="payments">
-          <span class="pitem"><svg><use href="#icon-pix"/></svg>Pix</span>
-          <span class="pitem"><svg><use href="#icon-card"/></svg>Cartão (3x)</span>
-          <span class="pitem"><svg><use href="#icon-boleto"/></svg>Boleto</span>
-        </div>
       </div>
     </div>
   </section>
@@ -536,6 +650,8 @@
         <div class="ticket-body">
           <p class="ticket-title">Manual do Cão Que Vive Mais</p>
 
+          <img class="ticket-mockup" src="./assets/ebook-bonus.jpg" alt="Manual do Cão Que Vive Mais e os 3 bônus: 10 Truques Rápidos, Lista de 50 Alimentos Proibidos e Plano de 30 Dias de Alimentação">
+
           <ul class="ticket-list">
             <li>
               <span class="check"><svg><use href="#icon-check"/></svg></span>
@@ -547,7 +663,7 @@
             <li>
               <span class="check"><svg><use href="#icon-check"/></svg></span>
               <span>
-                <span class="item-title">Bônus 1: Checklist "50 Alimentos PROIBIDOS para Cães"</span><br>
+                <span class="item-title">Bônus 1: Lista dos 50 Alimentos PROIBIDOS para Cães</span><br>
                 <span class="item-sub">Para nunca mais ter dúvida na hora de cozinhar para ele.</span>
               </span>
             </li>
@@ -579,7 +695,6 @@
           <div class="price-row">
             <span class="price-old mono">R$ 87,00</span>
             <span class="price-new">R$ 29,90</span>
-            <span class="price-badge">-66% OFF</span>
           </div>
           <p class="price-caption">pagamento único · acesso imediato e para sempre</p>
 
@@ -594,26 +709,17 @@
             <span class="pitem"><svg><use href="#icon-card"/></svg>Cartão (3x)</span>
             <span class="pitem"><svg><use href="#icon-boleto"/></svg>Boleto</span>
           </div>
+
+          <div class="how-it-works">
+            <p class="how-title">Veja como é simples:</p>
+            <ol class="how-steps">
+              <li><span class="num">1</span>Toque no botão acima</li>
+              <li><span class="num">2</span>Escolha Pix, cartão ou boleto e finalize o pagamento</li>
+              <li><span class="num">3</span>Receba o manual na hora, direto no seu e-mail</li>
+            </ol>
+          </div>
         </div>
         <div class="ticket-scallop bottom"></div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="hairline">
-
-  <!-- 4. DESCRIÇÃO DO PRODUTO -->
-  <section class="about">
-    <div class="wrap about-grid">
-      <div class="about-copy">
-        <p class="eyebrow">Por dentro do manual</p>
-        <h2>O que vai no prato dele hoje ajuda a decidir quantos anos vocês ainda vão ter juntos.</h2>
-        <div class="body-copy">
-          <p>Hoje, a alimentação do seu cão provavelmente se resume à ração do saco, alguma sobra do seu prato e um petisco "só para fazer festa". Parece inofensivo. É assim que quase todo tutor faz.</p>
-          <p>O problema é que a maioria das rações prioriza prazo de validade, não nutrientes reais. E sem uma referência clara de porção e ingrediente, é fácil errar todos os dias sem perceber.</p>
-          <p>É esse pequeno erro repetido que, com o tempo, aparece como sobrepeso, cansaço fora do normal e visitas cada vez mais frequentes ao veterinário. Ninguém quer olhar para trás pensando "eu podia ter evitado isso".</p>
-          <p><strong>O Manual do Cão Que Vive Mais</strong> resolve isso na prática: 100 receitas caseiras, com ingrediente certo e porção calculada por peso. Não é sobre virar especialista. É sobre transformar cada prato em <strong>mais um passeio, mais uma tarde no sofá, mais um ano inteiro ao lado dele</strong>.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -670,12 +776,7 @@
   <section class="guarantee">
     <div class="wrap">
       <div class="guarantee-card">
-        <svg class="stamp" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="47" fill="none" stroke="var(--copper-deep)" stroke-width="2" stroke-dasharray="3 5"/>
-          <circle cx="50" cy="50" r="38" fill="var(--copper)"/>
-          <text x="50" y="46" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="800" fill="var(--paper)">7 DIAS</text>
-          <text x="50" y="62" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" letter-spacing="0.5" fill="var(--paper)">GARANTIA</text>
-        </svg>
+        <img class="stamp-img" src="./assets/selo-garantia.jpg" alt="Selo de garantia de 7 dias">
         <div>
           <h2>Risco zero para você</h2>
           <p>Se por qualquer motivo você não gostar do material, é só pedir. Devolvemos 100% do seu dinheiro, sem perguntas, dentro de 7 dias após a compra. O único risco aqui é adiar mais um passeio, mais uma tarde no sofá, mais um ano inteiro ao lado dele.</p>
@@ -690,46 +791,12 @@
       <p class="box">Este material tem caráter informativo e não substitui avaliação de um médico-veterinário profissional.</p>
     </div>
   </section>
-
-  <!-- 8. CTA FINAL -->
-  <section class="final-cta">
-    <div class="wrap">
-      <h2>Seu cão já te deu anos de alegria. Agora é a sua vez de dar mais tempo a ele.</h2>
-      <p class="final-lead">Mais um passeio, mais uma tarde no sofá, mais um ano inteiro ao lado dele: é isso que está em jogo agora.</p>
-      <a href="https://pay.cakto.com.br/6mw9tjc_1100300" class="btn btn-primary">
-        QUERO PROTEGER MEU CÃO AGORA
-        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <div class="payments">
-        <span class="pitem"><svg><use href="#icon-pix"/></svg>Pix</span>
-        <span class="pitem"><svg><use href="#icon-card"/></svg>Cartão (3x)</span>
-        <span class="pitem"><svg><use href="#icon-boleto"/></svg>Boleto</span>
-      </div>
-      <p class="final-guarantee-note">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><use href="#icon-check"/></svg>
-        Garantia de 7 dias · Acesso imediato e para sempre
-      </p>
-    </div>
-  </section>
 </main>
 
 <footer class="site">
   <div class="wrap footer-row">
-    <div class="brandmark">
-      <svg class="seal-tiny" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="47" fill="none" stroke="var(--copper-deep)" stroke-width="2" stroke-dasharray="3 5"/>
-        <circle cx="50" cy="50" r="38" fill="var(--copper)"/>
-        <ellipse cx="50" cy="63" rx="19" ry="15" fill="var(--paper)"/>
-        <ellipse cx="27" cy="38" rx="8" ry="10.5" transform="rotate(-18 27 38)" fill="var(--paper)"/>
-        <ellipse cx="42" cy="27" rx="7.2" ry="9.5" fill="var(--paper)"/>
-        <ellipse cx="58" cy="27" rx="7.2" ry="9.5" fill="var(--paper)"/>
-        <ellipse cx="73" cy="38" rx="8" ry="10.5" transform="rotate(18 73 38)" fill="var(--paper)"/>
-      </svg>
-      Manual do Cão Que Vive Mais
-    </div>
     <p class="fine">Conteúdo digital de caráter informativo. Não substitui avaliação veterinária profissional.</p>
   </div>
 </footer>
 
-</body>
-</html>
+</body></html>
