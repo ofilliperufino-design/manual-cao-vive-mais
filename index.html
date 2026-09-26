@@ -362,6 +362,47 @@
     justify-content:center;
   }
 
+  /* ---------- depoimentos ---------- */
+  .testimonials{padding:20px 0 76px;}
+  .testimonials-head{max-width:640px;margin:0 auto 34px;text-align:center;}
+  .testimonial-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 20px;
+    border:1px solid var(--copper-soft);
+    background:var(--copper-soft);
+    border-radius:999px;
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+  }
+  .testimonial-badge svg{width:16px;height:16px;flex:none;}
+  .testimonials-lead{
+    margin-top:16px;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+  .testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:20px;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .testimonials-grid img{
+    width:100%;
+    border-radius:14px;
+    border:1px solid var(--line);
+    box-shadow:0 16px 32px -18px var(--shadow);
+  }
+  @media (max-width:640px){
+    .testimonials-grid{grid-template-columns:1fr;max-width:420px;}
+  }
+
   /* ---------- signals ---------- */
   .signals{padding:20px 0 76px;}
   .signals-head{max-width:640px;}
@@ -720,6 +761,25 @@
           </div>
         </div>
         <div class="ticket-scallop bottom"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3B. DEPOIMENTOS -->
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="testimonials-head">
+        <span class="testimonial-badge">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.14-4.03 7.5-9 7.5-1.06 0-2.08-.15-3.02-.43L4 20l1.1-3.3C3.8 15.4 3 13.53 3 11.5 3 7.36 7.03 4 12 4s9 3.36 9 7.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Quem já testa em casa
+        </span>
+        <p class="testimonials-lead">Veja os relatos reais de tutoras que já estão dando mais saúde e mais anos de vida aos seus cães:</p>
+      </div>
+      <div class="testimonials-grid">
+        <img src="./depoimento-1.jpg" alt="Depoimento de Raquel Soares sobre o Manual do Cão Que Vive Mais">
+        <img src="./depoimento-2.jpg" alt="Depoimento de Luciana Peixoto sobre o Manual do Cão Que Vive Mais">
+        <img src="./depoimento-3.jpg" alt="Depoimento de Michelle Oliveira sobre o Manual do Cão Que Vive Mais">
+        <img src="./depoimento-4.jpg" alt="Depoimento de Jessica Domingues sobre o Manual do Cão Que Vive Mais">
       </div>
     </div>
   </section>
