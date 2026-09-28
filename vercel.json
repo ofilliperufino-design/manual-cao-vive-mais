@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "redirects": [
+    { "source": "/", "destination": "/vsl", "permanent": false },
     { "source": "/play-vsl", "destination": "/vsl", "permanent": false }
   ]
 }
