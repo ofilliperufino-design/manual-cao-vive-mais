@@ -1,5 +1,11 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
 <title>Manual do Cão Que Vive Mais</title>
+<link rel="preload" as="image" href="./poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap">
@@ -360,6 +366,7 @@
   }
   .vsl-frame video{
     width:100%;
+    height:auto;
     display:block;
     aspect-ratio:9/16;
     background:#000;
@@ -634,10 +641,131 @@
     .price-new{font-size:36px;}
   }
 
+  /* ---------- preço "de / por" ---------- */
+  .price-from{
+    text-align:center;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .price-from .price-old{font-size:15px;}
+
+  /* ---------- carrossel de depoimentos ---------- */
+  .carousel{position:relative;max-width:420px;margin:0 auto;}
+  .carousel-track{
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    padding:4px 2px 18px;
+  }
+  .carousel-track::-webkit-scrollbar{display:none;}
+  .carousel-slide{
+    flex:0 0 100%;
+    scroll-snap-align:center;
+  }
+  .carousel-slide img{
+    width:100%;
+    height:auto;
+    aspect-ratio:558/1000;
+    border-radius:14px;
+    border:1px solid var(--line);
+    box-shadow:0 16px 32px -18px var(--shadow);
+    background:#111;
+  }
+  .carousel-arrow{
+    position:absolute;
+    top:calc(50% - 30px);
+    width:40px;height:40px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--ink);
+    box-shadow:0 6px 16px -6px var(--shadow);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    padding:0;
+  }
+  .carousel-arrow svg{width:18px;height:18px;}
+  .carousel-arrow.prev{left:-10px;}
+  .carousel-arrow.next{right:-10px;}
+  .carousel-dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+  }
+  .carousel-dots button{
+    width:8px;height:8px;
+    border-radius:999px;
+    border:none;
+    padding:0;
+    background:var(--line);
+    cursor:pointer;
+    transition:width .2s ease, background .2s ease;
+  }
+  .carousel-dots button[aria-current="true"]{width:26px;background:var(--copper);}
+  .carousel-hint{
+    text-align:center;
+    margin-top:12px;
+    font-size:13px;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- barra fixa de compra ---------- */
+  .buybar{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    z-index:50;
+    background:rgba(255,255,255,0.97);
+    border-top:1px solid var(--line);
+    box-shadow:0 -10px 24px -14px var(--shadow);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .buybar-inner{
+    max-width:640px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .buybar-price{line-height:1.2;}
+  .buybar-access{
+    display:flex;align-items:center;gap:5px;
+    font-size:12px;font-weight:700;color:var(--green);
+  }
+  .buybar-access svg{width:13px;height:13px;}
+  .buybar-values{display:flex;align-items:baseline;gap:6px;margin-top:2px;}
+  .buybar-values .old{font-size:12.5px;color:var(--ink-faint);text-decoration:line-through;}
+  .buybar-values .new{font-family:'Poppins',sans-serif;font-weight:900;font-size:21px;color:var(--ink);}
+  .buybar .btn-primary{
+    width:auto;
+    flex:none;
+    font-size:14.5px;
+    padding:14px 18px;
+    border-radius:10px;
+  }
+  body{padding-bottom:84px;}
+
+  @media (max-width:640px){
+    .hero{padding:22px 0 18px;}
+    .hero h1{font-size:26px;margin-top:0;}
+    .hero-punch{margin-top:12px;font-size:16px;}
+    .vsl{padding-bottom:40px;}
+    .offer{padding-top:44px;}
+  }
+  @media (max-width:360px){
+    .buybar .btn-primary{font-size:13px;padding:13px 12px;}
+    .buybar-values .new{font-size:19px;}
+  }
+
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important; animation:none !important;}
   }
 </style>
+</head>
+<body>
 
 <svg width="0" height="0" style="position:absolute">
   <symbol id="icon-check" viewBox="0 0 24 24" fill="none">
@@ -683,8 +811,10 @@
           controls
           playsinline
           preload="metadata"
+          width="540" height="960"
         ></video>
       </div>
+      <p class="vsl-caption">▶ Toque para assistir · 2 minutos · ligue o som</p>
       <div class="hero-actions vsl-actions">
         <a href="/ir-checkout.html" class="btn btn-primary">
           QUERO O MANUAL AGORA
@@ -710,7 +840,7 @@
           <p class="ticket-title">Manual do Cão Que Vive Mais</p>
           <div class="ticket-tag"><span>🔍 Busca por sintoma incluída</span></div>
 
-          <img class="ticket-mockup" src="./ebook-bonus.jpg" alt="Manual do Cão Que Vive Mais e os 3 bônus: 10 Truques Rápidos, Lista de 50 Alimentos Proibidos e Plano de 30 Dias de Alimentação">
+          <img class="ticket-mockup" src="./ebook-bonus.jpg" width="900" height="672" loading="lazy" decoding="async" alt="Manual do Cão Que Vive Mais e os 3 bônus: 10 Truques Rápidos, Lista de 50 Alimentos Proibidos e Plano de 30 Dias de Alimentação">
 
           <ul class="ticket-list">
             <li>
@@ -759,11 +889,11 @@
 
           <hr class="ticket-divider">
 
+          <p class="price-from">De <span class="price-old mono">R$ 87,00</span> por apenas</p>
           <div class="price-row">
-            <span class="price-old mono">R$ 87,00</span>
             <span class="price-new">R$ 29,90</span>
           </div>
-          <p class="price-caption">pagamento único · acesso imediato e para sempre</p>
+          <p class="price-caption">no Pix ou parcelado no cartão · pagamento único</p>
 
           <div class="ticket-cta">
             <a href="/ir-checkout.html" class="btn btn-primary">
@@ -773,15 +903,14 @@
           </div>
           <div class="payments ticket-payments">
             <span class="pitem"><svg><use href="#icon-pix"/></svg>Pix</span>
-            <span class="pitem"><svg><use href="#icon-card"/></svg>Cartão (3x)</span>
-            <span class="pitem"><svg><use href="#icon-boleto"/></svg>Boleto</span>
+            <span class="pitem"><svg><use href="#icon-card"/></svg>Cartão de crédito</span>
           </div>
 
           <div class="how-it-works">
             <p class="how-title">Veja como é simples:</p>
             <ol class="how-steps">
               <li><span class="num">1</span>Toque no botão acima</li>
-              <li><span class="num">2</span>Escolha Pix, cartão ou boleto e finalize o pagamento</li>
+              <li><span class="num">2</span>Escolha Pix ou cartão e finalize o pagamento</li>
               <li><span class="num">3</span>Receba o manual na hora, direto no seu e-mail</li>
             </ol>
           </div>
@@ -801,11 +930,17 @@
         </span>
         <p class="testimonials-lead">Veja os relatos reais de tutoras que já estão dando mais saúde e mais anos de vida aos seus cães:</p>
       </div>
-      <div class="testimonials-grid">
-        <img src="./DEPOIMENTO%201.jpg" alt="Depoimento de Raquel Soares sobre o Manual do Cão Que Vive Mais">
-        <img src="./DEPOIMENTO%202.jpg" alt="Depoimento de Luciana Peixoto sobre o Manual do Cão Que Vive Mais">
-        <img src="./DEPOIMENTO%203.jpg" alt="Depoimento de Michelle Oliveira sobre o Manual do Cão Que Vive Mais">
-        <img src="./DEPOIMENTO%204.jpg" alt="Depoimento de Jessica Domingues sobre o Manual do Cão Que Vive Mais">
+      <div class="carousel" data-carousel>
+        <div class="carousel-track" tabindex="0" aria-label="Depoimentos">
+          <div class="carousel-slide"><img src="./depoimento-1.jpg" width="558" height="1000" loading="lazy" decoding="async" alt="Depoimento de Raquel Soares sobre o Manual do Cão Que Vive Mais"></div>
+          <div class="carousel-slide"><img src="./depoimento-2.jpg" width="558" height="1000" loading="lazy" decoding="async" alt="Depoimento de Luciana Peixoto sobre o Manual do Cão Que Vive Mais"></div>
+          <div class="carousel-slide"><img src="./depoimento-3.jpg" width="558" height="1000" loading="lazy" decoding="async" alt="Depoimento de Michelle Oliveira sobre o Manual do Cão Que Vive Mais"></div>
+          <div class="carousel-slide"><img src="./depoimento-4.jpg" width="558" height="1000" loading="lazy" decoding="async" alt="Depoimento de Jessica Domingues sobre o Manual do Cão Que Vive Mais"></div>
+        </div>
+        <button class="carousel-arrow prev" type="button" aria-label="Depoimento anterior"><svg viewBox="0 0 24 24" fill="none"><path d="M15 5L8 12L15 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="carousel-arrow next" type="button" aria-label="Próximo depoimento"><svg viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="carousel-dots"></div>
+        <p class="carousel-hint">⇄ Passando automaticamente · toque para pausar</p>
       </div>
     </div>
   </section>
@@ -862,12 +997,25 @@
   <section class="guarantee">
     <div class="wrap">
       <div class="guarantee-card">
-        <img class="stamp-img" src="./selo-garantia.jpg" alt="Selo de garantia de 7 dias">
+        <img class="stamp-img" src="./selo-garantia.jpg" width="320" height="239" loading="lazy" decoding="async" alt="Selo de garantia de 7 dias">
         <div>
           <h2>Risco zero para você</h2>
           <p>Se por qualquer motivo você não gostar do material, é só pedir. Devolvemos 100% do seu dinheiro, sem perguntas, dentro de 7 dias após a compra. O único risco aqui é adiar mais um passeio, mais uma tarde no sofá, mais um ano inteiro ao lado dele.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 6B. CTA FINAL -->
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>Na próxima vez que ele estiver diferente, você já sabe o que cozinhar</h2>
+      <p class="final-lead">Manual completo + 3 bônus, por R$ 29,90 no Pix ou parcelado no cartão. Acesso na hora, direto no seu e-mail.</p>
+      <a href="/ir-checkout.html" class="btn btn-primary">
+        QUERO O MANUAL AGORA
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="final-guarantee-note">Garantia de 7 dias · devolução de 100% do valor</p>
     </div>
   </section>
 
@@ -884,6 +1032,82 @@
     <p class="fine">Conteúdo digital de caráter informativo. Não substitui avaliação veterinária profissional.</p>
   </div>
 </footer>
+
+<!-- BARRA FIXA DE COMPRA -->
+<div class="buybar" role="region" aria-label="Comprar o manual">
+  <div class="buybar-inner">
+    <div class="buybar-price">
+      <span class="buybar-access"><svg><use href="#icon-check"/></svg>Acesso imediato</span>
+      <span class="buybar-values"><span class="old mono">R$ 87</span><span class="new">R$ 29,90</span></span>
+    </div>
+    <a href="/ir-checkout.html" class="btn btn-primary">
+      QUERO O MANUAL
+      <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<script>
+  // Carrossel de depoimentos: passa sozinho a cada 4s; para quando a pessoa toca.
+  (function () {
+    var root = document.querySelector('[data-carousel]');
+    if (!root) return;
+    var track = root.querySelector('.carousel-track');
+    var slides = root.querySelectorAll('.carousel-slide');
+    var dotsBox = root.querySelector('.carousel-dots');
+    var hint = root.querySelector('.carousel-hint');
+    var current = 0, timer = null, paused = false;
+
+    slides.forEach(function (_, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Ver depoimento ' + (i + 1));
+      b.addEventListener('click', function () { pause(); go(i); });
+      dotsBox.appendChild(b);
+    });
+    var dots = dotsBox.querySelectorAll('button');
+
+    function mark(i) {
+      current = i;
+      dots.forEach(function (d, j) { d.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    }
+    function go(i) {
+      i = (i + slides.length) % slides.length;
+      track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      mark(i);
+    }
+    function start() {
+      if (paused || timer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      timer = setInterval(function () { go(current + 1); }, 4000);
+    }
+    function pause() {
+      paused = true;
+      clearInterval(timer); timer = null;
+      if (hint) hint.textContent = 'Arraste para o lado para ver mais relatos';
+    }
+
+    root.querySelector('.prev').addEventListener('click', function () { pause(); go(current - 1); });
+    root.querySelector('.next').addEventListener('click', function () { pause(); go(current + 1); });
+    track.addEventListener('pointerdown', pause);
+    track.addEventListener('touchstart', pause, { passive: true });
+    track.addEventListener('scroll', function () {
+      var i = Math.round(track.scrollLeft / track.clientWidth);
+      if (i !== current && i >= 0 && i < slides.length) mark(i);
+    }, { passive: true });
+
+    // Só começa a passar quando os depoimentos aparecem na tela.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) start(); else { clearInterval(timer); timer = null; }
+        });
+      }, { threshold: 0.4 }).observe(root);
+    } else {
+      start();
+    }
+    mark(0);
+  })();
+</script>
 
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
