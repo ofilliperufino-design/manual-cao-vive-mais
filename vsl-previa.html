@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Manual do Cão Que Vive Mais</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preload" as="image" href="./poster-vsl-2.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --paper-2:#FBFCFB;
+    --paper-3:#FFFFFF;
+    --ink:#22301F;
+    --ink-soft:#57655A;
+    --ink-faint:#8B978E;
+    --copper:#3F7D50;
+    --copper-deep:#2C5E3A;
+    --copper-soft:#E1F2E3;
+    --green:#2C5E3A;
+    --green-soft:#E1F2E3;
+    --line:#DCE8DE;
+    --shadow:rgba(34,48,31,0.13);
+    --focus:#2C5E3A;
+    --warn:#B7511B;
+    --warn-soft:#FBEAE0;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', 'Helvetica Neue', Arial, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    font-weight:900;
+    line-height:1.16;
+    margin:0;
+    text-wrap:balance;
+    color:var(--ink);
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;height:auto;display:block;}
+  ::selection{background:var(--copper-soft);color:var(--ink);}
+  :focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:3px;}
+
+  .mono{
+    font-family:'Inter', sans-serif;
+    font-variant-numeric:tabular-nums;
+  }
+  .eyebrow{
+    font-family:'Inter', sans-serif;
+    font-size:12.5px;
+    font-weight:800;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+  }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .measure{
+    max-width:640px;
+  }
+
+  section{
+    padding:76px 0;
+  }
+  .hairline{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:0;
+  }
+
+  /* ---------- header ---------- */
+  header.site{
+    padding:22px 0;
+  }
+  .brandmark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Poppins', sans-serif;
+    font-weight:800;
+    font-size:16.5px;
+    letter-spacing:0.005em;
+  }
+  .brandmark .seal-tiny{width:26px;height:26px;flex:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:36px 0 72px;
+  }
+  .hero-grid{
+    max-width:680px;
+  }
+  .hero h1{
+    font-size:clamp(32px, 4.4vw, 50px);
+    letter-spacing:-0.01em;
+    margin-top:14px;
+  }
+  .hero-punch{
+    margin-top:20px;
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:clamp(17px,2vw,20px);
+    color:var(--ink);
+    max-width:56ch;
+  }
+  .hero-actions{
+    margin-top:30px;
+  }
+  .micro-note{
+    margin-top:12px;
+    font-size:13px;
+    color:var(--ink-faint);
+  }
+
+  /* button */
+  .btn{
+    appearance:none;
+    border:none;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family:'Inter', sans-serif;
+    font-weight:800;
+    letter-spacing:0.01em;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary{
+    background:var(--copper);
+    color:#FBF6EC;
+    font-size:16.5px;
+    padding:18px 30px;
+    border-radius:10px;
+    box-shadow:0 10px 24px -8px var(--shadow);
+    width:100%;
+    max-width:460px;
+  }
+  .btn-primary:hover{background:var(--copper-deep);transform:translateY(-1px);}
+  .btn-primary:active{transform:translateY(0);}
+  .btn-primary .arrow{transition:transform .15s ease;}
+  .btn-primary:hover .arrow{transform:translateX(3px);}
+
+  .payments{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-top:20px;
+    flex-wrap:wrap;
+  }
+  .payments .pitem{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:13px;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  .payments svg{width:20px;height:20px;flex:none;color:var(--ink-faint);}
+
+  /* ---------- offer ticket ---------- */
+  .offer{padding:64px 0 76px;}
+  .offer-head{
+    text-align:center;
+    max-width:560px;
+    margin:0 auto 34px;
+  }
+  .offer-head h2{
+    font-size:clamp(26px,3.2vw,34px);
+    margin-top:10px;
+  }
+  .ticket{
+    position:relative;
+    max-width:640px;
+    margin:0 auto;
+    background:var(--paper-3);
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:0 24px 48px -24px var(--shadow);
+    overflow:hidden;
+  }
+  .ticket-scallop{
+    height:16px;
+    background-image:radial-gradient(circle at 12px 0, transparent 11px, var(--paper) 11.5px);
+    background-size:24px 16px;
+    background-repeat:repeat-x;
+  }
+  .ticket-scallop.bottom{transform:rotate(180deg);}
+  .ticket-body{padding:12px 40px 36px;}
+  .ticket-tag{
+    display:flex;
+    justify-content:center;
+    margin-top:8px;
+  }
+  .ticket-tag span{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:5px 14px;
+    background:var(--green-soft);
+    color:var(--copper-deep);
+    border-radius:999px;
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:0.02em;
+  }
+  .ticket-mockup{
+    width:100%;
+    border-radius:12px;
+    margin:18px 0 26px;
+  }
+  .ticket-title{
+    text-align:center;
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+    padding-top:14px;
+  }
+  .ticket-list{
+    list-style:none;
+    margin:26px 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .ticket-list li{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .check{
+    flex:none;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--green-soft);
+    display:flex;align-items:center;justify-content:center;
+    margin-top:2px;
+  }
+  .check svg{width:12px;height:12px;color:var(--green);}
+  .ticket-list .item-title{font-weight:700;font-size:15.5px;}
+  .ticket-list .item-sub{font-size:14px;color:var(--ink-soft);margin-top:2px;}
+
+  .ticket-divider{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:30px 0 26px;
+  }
+
+  .price-row{
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .price-old{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:16px;
+    color:var(--ink-faint);
+    text-decoration:line-through;
+  }
+  .price-new{
+    font-family:'Poppins', sans-serif;
+    font-weight:900;
+    font-size:44px;
+    color:var(--ink);
+  }
+  .price-badge{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    font-weight:800;
+    color:#FBF6EC;
+    background:var(--copper);
+    padding:5px 10px;
+    border-radius:6px;
+    letter-spacing:.02em;
+  }
+  .price-caption{
+    text-align:center;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .ticket-cta{
+    margin-top:26px;
+    display:flex;
+    justify-content:center;
+  }
+  .ticket-payments{
+    margin-top:18px;
+    justify-content:center;
+  }
+  .how-it-works{
+    margin-top:28px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+  }
+  .how-title{
+    text-align:center;
+    font-weight:700;
+    font-size:14px;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .how-steps{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:340px;
+    margin:0 auto;
+  }
+  .how-steps li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .how-steps .num{
+    flex:none;
+    width:20px;height:20px;
+    border-radius:50%;
+    background:var(--green-soft);
+    color:var(--copper-deep);
+    font-weight:800;
+    font-size:12px;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ---------- vsl ---------- */
+  .vsl{padding:0 0 56px;}
+  .vsl-frame{
+    max-width:420px;
+    margin:0 auto;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 24px 48px -20px var(--shadow);
+    border:1px solid var(--line);
+    background:#000;
+  }
+  .vsl-frame video{
+    width:100%;
+    height:auto;
+    display:block;
+    aspect-ratio:9/16;
+    background:#000;
+  }
+  .vsl-frame{position:relative;}
+  .vsl-play{
+    position:absolute;
+    inset:0;
+    width:100%;
+    border:none;
+    padding:24px;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:44px;
+    gap:14px;
+    color:#fff;
+    font-family:'Inter', sans-serif;
+    text-align:center;
+    background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 65%);
+    -webkit-tap-highlight-color:transparent;
+  }
+  .vsl-play[hidden]{display:none;}
+  .vsl-play-circle{
+    width:92px;height:92px;
+    border-radius:50%;
+    background:var(--copper);
+    border:4px solid #fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 0 0 rgba(63,125,80,0.7), 0 12px 28px -6px rgba(0,0,0,0.5);
+    animation:vsl-pulse 1.8s ease-out infinite;
+  }
+  .vsl-play-circle svg{width:44px;height:44px;margin-left:5px;}
+  .vsl-play-title{
+    font-family:'Poppins', sans-serif;
+    font-weight:900;
+    font-size:24px;
+    line-height:1.15;
+    text-shadow:0 2px 10px rgba(0,0,0,0.6);
+  }
+  .vsl-play-sound{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 16px;
+    border-radius:999px;
+    background:#fff;
+    color:var(--ink);
+    font-size:15px;
+    font-weight:800;
+    box-shadow:0 8px 20px -8px rgba(0,0,0,0.5);
+  }
+  .vsl-play-sound svg{width:20px;height:20px;flex:none;color:var(--copper-deep);}
+  .vsl-play:hover .vsl-play-circle{transform:scale(1.05);}
+  @keyframes vsl-pulse{
+    0%{box-shadow:0 0 0 0 rgba(63,125,80,0.7), 0 12px 28px -6px rgba(0,0,0,0.5);}
+    70%{box-shadow:0 0 0 22px rgba(63,125,80,0), 0 12px 28px -6px rgba(0,0,0,0.5);}
+    100%{box-shadow:0 0 0 0 rgba(63,125,80,0), 0 12px 28px -6px rgba(0,0,0,0.5);}
+  }
+  .vsl-caption{
+    text-align:center;
+    margin-top:14px;
+    font-size:13.5px;
+    color:var(--ink-faint);
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .vsl-actions{
+    max-width:420px;
+    margin:20px auto 0;
+    display:flex;
+    justify-content:center;
+  }
+
+  /* ---------- depoimentos ---------- */
+  .testimonials{padding:20px 0 76px;}
+  .testimonials-head{max-width:640px;margin:0 auto 34px;text-align:center;}
+  .testimonial-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 20px;
+    border:1px solid var(--copper-soft);
+    background:var(--copper-soft);
+    border-radius:999px;
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--copper-deep);
+  }
+  .testimonial-badge svg{width:16px;height:16px;flex:none;}
+  .testimonials-lead{
+    margin-top:16px;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+  .testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:20px;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .testimonials-grid img{
+    width:100%;
+    border-radius:14px;
+    border:1px solid var(--line);
+    box-shadow:0 16px 32px -18px var(--shadow);
+  }
+  @media (max-width:640px){
+    .testimonials-grid{grid-template-columns:1fr;max-width:420px;}
+  }
+
+  /* ---------- signals ---------- */
+  .signals{padding:20px 0 76px;}
+  .signals-head{max-width:640px;}
+  .signals-head h2{font-size:clamp(25px,3.4vw,33px);margin-top:10px;}
+  .signals-lead{
+    margin-top:14px;
+    font-size:16.5px;
+    color:var(--ink-soft);
+    max-width:60ch;
+  }
+  .signals-list{
+    list-style:none;
+    margin:32px 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    max-width:640px;
+  }
+  .signals-list li{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    font-size:15.5px;
+    color:var(--ink);
+  }
+  .warn-mark{
+    flex:none;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--warn-soft);
+    color:var(--warn);
+    font-weight:800;
+    font-size:13px;
+    display:flex;align-items:center;justify-content:center;
+    margin-top:1px;
+  }
+  .signals-close{
+    margin-top:30px;
+    max-width:640px;
+    padding:22px 24px;
+    background:var(--warn-soft);
+    border-left:4px solid var(--warn);
+    border-radius:8px;
+    font-size:15.5px;
+    color:var(--ink);
+    line-height:1.6;
+  }
+
+  /* ---------- about ---------- */
+  .about{
+    padding:76px 0;
+  }
+  .about-grid{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+  }
+  .about-copy{max-width:700px;}
+  .about h2{font-size:clamp(25px,3.4vw,33px);}
+  .about .body-copy{
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    font-size:16.5px;
+    color:var(--ink-soft);
+  }
+  .about .body-copy strong{color:var(--ink);font-weight:700;}
+
+  /* ---------- faq ---------- */
+  .faq{padding:72px 0;}
+  .faq-head{max-width:560px;margin-bottom:30px;}
+  .faq-head h2{font-size:clamp(26px,3.2vw,32px);}
+  .faq-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .faq-item{
+    border-top:1px solid var(--line);
+  }
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:22px 2px;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:17px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .plus{
+    flex:none;
+    width:26px;height:26px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .faq-item summary .plus::before,
+  .faq-item summary .plus::after{
+    content:"";
+    position:absolute;
+    background:var(--copper-deep);
+  }
+  .faq-item summary .plus::before{width:11px;height:1.6px;}
+  .faq-item summary .plus::after{width:1.6px;height:11px;transition:transform .18s ease;}
+  .faq-item[open] summary .plus::after{transform:rotate(90deg);opacity:0;}
+  .faq-item .faq-a{
+    padding:0 2px 24px;
+    max-width:64ch;
+    color:var(--ink-soft);
+    font-size:15.5px;
+  }
+
+  /* ---------- guarantee ---------- */
+  .guarantee{padding:70px 0;}
+  .guarantee-card{
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:48px 40px;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:36px;
+    align-items:center;
+  }
+  .stamp-img{
+    width:118px;height:118px;flex:none;
+    border-radius:50%;
+    object-fit:contain;
+  }
+  .guarantee-card h2{font-size:clamp(22px,2.8vw,27px);}
+  .guarantee-card p{
+    margin-top:10px;
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:56ch;
+  }
+
+  /* ---------- disclaimer ---------- */
+  .disclaimer{padding:36px 0;}
+  .disclaimer .box{
+    border-top:1px solid var(--line);
+    padding-top:24px;
+    font-size:13px;
+    color:var(--ink-faint);
+    font-style:italic;
+    max-width:70ch;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  /* ---------- final cta ---------- */
+  .final-cta{
+    padding:78px 0 90px;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:clamp(26px,3.6vw,38px);
+    max-width:680px;
+    margin:0 auto;
+  }
+  .final-lead{
+    margin:16px auto 0;
+    max-width:520px;
+    font-size:16.5px;
+    color:var(--ink-soft);
+  }
+  .final-cta .btn-primary{margin:30px auto 0;}
+  .final-cta .payments{justify-content:center;}
+  .final-guarantee-note{
+    margin-top:18px;
+    font-size:13px;
+    color:var(--ink-faint);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+  }
+
+  /* ---------- footer ---------- */
+  footer.site{
+    padding:26px 0 40px;
+    border-top:1px solid var(--line);
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .footer-row .brandmark{font-size:14px;color:var(--ink-soft);}
+  .footer-row .fine{
+    font-size:12px;
+    color:var(--ink-faint);
+    max-width:480px;
+  }
+
+  @media (max-width:860px){
+    .guarantee-card{grid-template-columns:1fr;text-align:center;justify-items:center;padding:38px 26px;}
+    .ticket-body{padding:12px 24px 30px;}
+    section{padding:56px 0;}
+  }
+  @media (max-width:480px){
+    .price-new{font-size:36px;}
+  }
+
+  /* ---------- preço "de / por" ---------- */
+  .price-from{
+    text-align:center;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .price-from .price-old{font-size:15px;}
+
+  /* ---------- carrossel de depoimentos ---------- */
+  .carousel{position:relative;max-width:420px;margin:0 auto;}
+  .carousel-track{
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    padding:4px 2px 18px;
+  }
+  .carousel-track::-webkit-scrollbar{display:none;}
+  .carousel-slide{
+    flex:0 0 100%;
+    scroll-snap-align:center;
+  }
+  .carousel-slide img{
+    width:100%;
+    height:auto;
+    aspect-ratio:558/1000;
+    border-radius:14px;
+    border:1px solid var(--line);
+    box-shadow:0 16px 32px -18px var(--shadow);
+    background:#111;
+  }
+  .carousel-arrow{
+    position:absolute;
+    top:calc(50% - 30px);
+    width:40px;height:40px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--ink);
+    box-shadow:0 6px 16px -6px var(--shadow);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    padding:0;
+  }
+  .carousel-arrow svg{width:18px;height:18px;}
+  .carousel-arrow.prev{left:-10px;}
+  .carousel-arrow.next{right:-10px;}
+  .carousel-dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+  }
+  .carousel-dots button{
+    width:8px;height:8px;
+    border-radius:999px;
+    border:none;
+    padding:0;
+    background:var(--line);
+    cursor:pointer;
+    transition:width .2s ease, background .2s ease;
+  }
+  .carousel-dots button[aria-current="true"]{width:26px;background:var(--copper);}
+  .carousel-hint{
+    text-align:center;
+    margin-top:12px;
+    font-size:13px;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- barra fixa de compra ---------- */
+  .buybar{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    z-index:50;
+    background:rgba(255,255,255,0.97);
+    border-top:1px solid var(--line);
+    box-shadow:0 -10px 24px -14px var(--shadow);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .buybar-inner{
+    max-width:640px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .buybar-price{line-height:1.2;}
+  .buybar-access{
+    display:flex;align-items:center;gap:5px;
+    font-size:12px;font-weight:700;color:var(--green);
+  }
+  .buybar-access svg{width:13px;height:13px;}
+  .buybar-values{display:flex;align-items:baseline;gap:6px;margin-top:2px;}
+  .buybar-values .old{font-size:12.5px;color:var(--ink-faint);text-decoration:line-through;}
+  .buybar-values .new{font-family:'Poppins',sans-serif;font-weight:900;font-size:21px;color:var(--ink);}
+  .buybar .btn-primary{
+    width:auto;
+    flex:none;
+    font-size:14.5px;
+    padding:14px 18px;
+    border-radius:10px;
+  }
+  body{padding-bottom:84px;}
+
+
+  /* ============ v3: capa da VSL ============ */
+  .vsl-play{
+    justify-content:flex-start;
+    padding:24px 16px 0;
+    background:linear-gradient(180deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.46) 24%, rgba(0,0,0,0) 44%);
+  }
+  .vsl-hook{
+    font-family:'Poppins',sans-serif;
+    font-weight:900;
+    font-size:22px;
+    line-height:1.2;
+    text-shadow:0 2px 12px rgba(0,0,0,.75);
+  }
+  .vsl-hook em{display:block;margin-top:6px;font-style:normal;color:#FFE08A;}
+  .vsl-play-main{
+    position:absolute;left:0;right:0;top:47%;transform:translateY(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:14px;
+    pointer-events:none;
+  }
+  .vsl-play-circle{width:108px;height:108px;}
+  .vsl-play-circle svg{width:50px;height:50px;}
+  .vsl-play-title{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 20px;
+    border-radius:999px;
+    background:#fff;
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:15.5px;
+    line-height:1.1;
+    text-shadow:none;
+    box-shadow:0 8px 20px -8px rgba(0,0,0,.55);
+  }
+
+  @media (max-height:700px){ .vsl-play-main{top:31%;} }
+
+  /* ============ v3: garantia, taxa e bumps ============ */
+  .cta-guarantee{
+    display:flex;align-items:center;justify-content:center;gap:6px;
+    margin-top:10px;
+    font-size:13px;font-weight:700;color:var(--green);
+  }
+  .cta-guarantee svg{width:14px;height:14px;flex:none;}
+  .fee-note{
+    text-align:center;
+    margin:8px auto 0;
+    max-width:36ch;
+    font-size:12.5px;
+    color:var(--ink-faint);
+    line-height:1.4;
+  }
+  .bumps{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);}
+  .bumps-title{text-align:center;font-weight:700;font-size:14px;color:var(--ink);margin-bottom:12px;}
+  .bumps ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+  .bumps li{font-size:14px;line-height:1.45;color:var(--ink-soft);}
+  .bumps li strong{color:var(--ink);font-weight:700;}
+  .bump-price{display:inline-block;margin-left:4px;font-weight:800;color:var(--copper-deep);white-space:nowrap;}
+
+  /* ============ v3: veja por dentro ============ */
+  .inside{padding:8px 0 56px;}
+  .inside-head{max-width:420px;margin:0 auto 18px;text-align:center;}
+  .inside-head h2{font-size:clamp(23px,6vw,28px);margin-top:12px;}
+  .inside-lead{margin-top:10px;font-size:16px;color:var(--ink-soft);}
+  .inside-page{max-width:420px;margin:0 auto;}
+  .inside-page img{
+    width:100%;height:auto;
+    border-radius:12px;border:1px solid var(--line);
+    box-shadow:0 20px 40px -22px var(--shadow);
+    background:#fff;
+  }
+  .inside-page figcaption{margin-top:10px;text-align:center;font-size:13.5px;font-weight:700;color:var(--copper-deep);}
+  .inside-note{max-width:420px;margin:14px auto 0;text-align:center;font-size:13px;line-height:1.5;color:var(--ink-faint);}
+  .inside .hero-actions{max-width:420px;margin:20px auto 0;display:flex;justify-content:center;}
+
+  .previa-bar{
+    position:sticky;top:0;z-index:60;
+    background:#7A5F00;color:#FFF4CC;
+    text-align:center;font-size:12px;font-weight:700;padding:6px 10px;
+  }
+
+  @media (max-width:640px){
+    .hero{padding:22px 0 18px;}
+    .hero h1{font-size:26px;margin-top:0;}
+    .hero-punch{margin-top:12px;font-size:16px;}
+    .vsl{padding-bottom:40px;}
+    .offer{padding-top:44px;}
+  }
+  @media (max-width:360px){
+    .buybar .btn-primary{font-size:13px;padding:13px 12px;}
+    .buybar-values .new{font-size:19px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none">
+    <path d="M4 12.5L9.5 18L20 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-pix" viewBox="0 0 24 24" fill="none">
+    <path d="M12 3L17.5 8.5M12 21L6.5 15.5M3 12L8.5 6.5M21 12L15.5 17.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <rect x="9.6" y="9.6" width="4.8" height="4.8" rx="1.1" transform="rotate(45 12 12)" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-card" viewBox="0 0 24 24" fill="none">
+    <rect x="2.5" y="5.5" width="19" height="13" rx="2.2" stroke="currentColor" stroke-width="1.7"/>
+    <path d="M2.5 9.5H21.5" stroke="currentColor" stroke-width="1.7"/>
+    <path d="M6 14.5H10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-boleto" viewBox="0 0 24 24" fill="none">
+    <path d="M3 4V20" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+    <path d="M6.4 4V20" stroke="currentColor" stroke-width="1"/>
+    <path d="M8.6 4V20" stroke="currentColor" stroke-width="2.4"/>
+    <path d="M11.4 4V20" stroke="currentColor" stroke-width="1"/>
+    <path d="M13.2 4V20" stroke="currentColor" stroke-width="1.9"/>
+    <path d="M16 4V20" stroke="currentColor" stroke-width="1"/>
+    <path d="M18.4 4V20" stroke="currentColor" stroke-width="2.4"/>
+    <path d="M21 4V20" stroke="currentColor" stroke-width="1"/>
+  </symbol>
+</svg>
+
+<div class="previa-bar">PRÉVIA · não é a página no ar · sem Analytics</div>
+<main>
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <h1>Esse Guia Te Diz Exatamente O Que Cozinhar Pro Seu Cão, De Acordo Com O Que Ele Está Sentindo</h1>
+      <!-- SUBHEADLINE: a de baixo é a ATIVA. Variações prontas para teste (trocar o texto do <p>):
+           A (sintoma): "Coceira, barriga sensível ou sobrepeso? Procure o sintoma no guia e veja qual receita usar, sem dieta complicada."
+           B (tempo):   "Em 5 minutos você sabe o que cozinhar hoje: procure o que ele está sentindo e siga a receita do guia." -->
+      <p class="hero-punch">Sem dietas complicadas. Você procura o sintoma e já sabe a receita certa, pra ele ter mais saúde e mais anos ao seu lado.</p>
+    </div>
+  </section>
+
+  <!-- 1A. VSL -->
+  <section class="vsl">
+    <div class="wrap">
+      <div class="vsl-frame" data-vsl>
+        <video
+          src="./vsl-2.mp4"
+          poster="./poster-vsl-2.jpg"
+          playsinline
+          preload="metadata"
+          width="540" height="960"
+        ></video>
+        <button class="vsl-play" type="button" aria-label="Assistir o vídeo com som (2 minutos e 43 segundos)">
+          <span class="vsl-hook">Coceira, barriga sensível ou sobrepeso?<em>Veja o que cozinhar</em></span>
+          <span class="vsl-play-main">
+            <span class="vsl-play-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5L8 5.5Z" fill="currentColor"/></svg>
+            </span>
+            <span class="vsl-play-title">🔊 Toque para ouvir (2min43)</span>
+          </span>
+        </button>
+      </div>
+      <p class="vsl-caption">Vídeo de 2min43 · a legenda já vem ligada, com ou sem som você acompanha.</p>
+      <div class="hero-actions vsl-actions">
+        <a href="/ir-checkout-v2.html" class="btn btn-primary">
+          QUERO O MANUAL AGORA
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <p class="cta-guarantee"><svg aria-hidden="true"><use href="#icon-check"/></svg>Garantia de 7 dias · devolução de 100% do valor</p>
+    </div>
+  </section>
+
+  <!-- 1B. VEJA POR DENTRO (para quem não dá play) -->
+  <section class="inside">
+    <div class="wrap">
+      <div class="inside-head">
+        <span class="testimonial-badge">📖 Veja por dentro do guia</span>
+        <h2>Você procura o sintoma e vai direto pra página certa</h2>
+        <p class="inside-lead">Esta é a página do Mapa de Sintomas, do jeito que está no manual:</p>
+      </div>
+      <figure class="inside-page">
+        <img src="./pagina-mapa-sintomas.jpg" width="1000" height="1298" loading="lazy" decoding="async" alt="Página do Mapa de Sintomas do manual: sem energia, pelo opaco, barriga sensível, intestino preso, coceira e alergia, acima do peso, cão idoso, sem apetite e petiscos saudáveis, com as receitas e a página de cada um">
+        <figcaption>8 sintomas · 100 receitas com porção por peso · 3 bônus</figcaption>
+      </figure>
+      <p class="inside-note">O manual é informativo e não substitui o veterinário. Cada capítulo mostra quando levar ao veterinário.</p>
+      <div class="hero-actions">
+        <a href="/ir-checkout-v2.html" class="btn btn-primary">
+          QUERO O MANUAL AGORA
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <p class="cta-guarantee"><svg aria-hidden="true"><use href="#icon-check"/></svg>Garantia de 7 dias · devolução de 100% do valor</p>
+    </div>
+  </section>
+
+  <hr class="hairline">
+
+  <!-- 2 & 3. OFERTA + CTA -->
+  <section class="offer" id="oferta">
+    <div class="wrap">
+      <div class="offer-head">
+        <p class="eyebrow">O que você recebe hoje</p>
+        <h2>Edição completa + 3 bônus grátis</h2>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-scallop"></div>
+        <div class="ticket-body">
+          <p class="ticket-title">Manual do Cão Que Vive Mais</p>
+          <div class="ticket-tag"><span>🔍 Busca por sintoma incluída</span></div>
+
+          <img class="ticket-mockup" src="./ebook-bonus.jpg" width="900" height="672" loading="lazy" decoding="async" alt="Manual do Cão Que Vive Mais e os 3 bônus: 10 Truques Rápidos, Lista de 50 Alimentos Proibidos e Plano de 30 Dias de Alimentação">
+
+          <ul class="ticket-list">
+            <li>
+              <span class="check"><svg><use href="#icon-check"/></svg></span>
+              <span>
+                <span class="item-title">Manual do Cão Que Vive Mais</span><br>
+                <span class="item-sub">100 receitas completas, com modo de preparo, porções por peso e tempo de preparo.</span>
+              </span>
+            </li>
+            <li>
+              <span class="check"><svg><use href="#icon-check"/></svg></span>
+              <span>
+                <span class="item-title">Organizado por sintoma e objetivo</span><br>
+                <span class="item-sub">Seu cão sem energia? Pelagem opaca? Problema digestivo? Você não precisa ler o livro inteiro pra descobrir — cada receita já indica pra qual sintoma ou melhoria ela ajuda.</span>
+              </span>
+            </li>
+            <li>
+              <span class="check"><svg><use href="#icon-check"/></svg></span>
+              <span>
+                <span class="item-title">Bônus 1: Lista dos 50 Alimentos PROIBIDOS para Cães</span><br>
+                <span class="item-sub">Para nunca mais ter dúvida na hora de cozinhar para ele.</span>
+              </span>
+            </li>
+            <li>
+              <span class="check"><svg><use href="#icon-check"/></svg></span>
+              <span>
+                <span class="item-title">Bônus 2: Plano de Alimentação Semanal Pronto (30 dias)</span><br>
+                <span class="item-sub">É só seguir o cardápio, sem precisar planejar nada sozinho.</span>
+              </span>
+            </li>
+            <li>
+              <span class="check"><svg><use href="#icon-check"/></svg></span>
+              <span>
+                <span class="item-title">Bônus 3: 10 Truques Rápidos Pro Seu Cão</span><br>
+                <span class="item-sub">Pequenos hábitos que fazem diferença no dia a dia dos dois.</span>
+              </span>
+            </li>
+            <li>
+              <span class="check"><svg><use href="#icon-check"/></svg></span>
+              <span>
+                <span class="item-title">Acesso imediato e para sempre</span><br>
+                <span class="item-sub">Entra, baixa e usa quando quiser, pelo tempo que quiser.</span>
+              </span>
+            </li>
+          </ul>
+
+          <hr class="ticket-divider">
+
+          <p class="price-from">De <span class="price-old mono">R$ 87,00</span> por apenas</p>
+          <div class="price-row">
+            <span class="price-new">R$ 29,90</span>
+          </div>
+          <p class="price-caption">no Pix ou parcelado no cartão · pagamento único</p>
+          
+          <div class="ticket-cta">
+            <a href="/ir-checkout-v2.html" class="btn btn-primary">
+              QUERO PROTEGER MEU CÃO AGORA
+              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <p class="cta-guarantee"><svg aria-hidden="true"><use href="#icon-check"/></svg>Garantia de 7 dias · devolução de 100% do valor</p>
+          <div class="payments ticket-payments">
+            <span class="pitem"><svg><use href="#icon-pix"/></svg>Pix</span>
+            <span class="pitem"><svg><use href="#icon-card"/></svg>Cartão de crédito</span>
+          </div>
+
+          <div class="how-it-works">
+            <p class="how-title">Veja como é simples:</p>
+            <ol class="how-steps">
+              <li><span class="num">1</span>Toque no botão acima</li>
+              <li><span class="num">2</span>Escolha Pix ou cartão e finalize o pagamento</li>
+              <li><span class="num">3</span>Receba o manual na hora, direto no seu e-mail</li>
+            </ol>
+          </div>
+
+          <div class="bumps">
+            <p class="bumps-title">Na hora de pagar, você pode adicionar (opcional):</p>
+            <ul>
+              <li><strong>Guia de Transição Alimentar + 20 Receitas</strong> <span class="bump-price">R$ 9,90</span><br>Passo a passo pra trocar a ração pela comida caseira aos poucos, com 20 receitas extras.</li>
+              <li><strong>Suplementação Completa + Rotina 30 Dias Pronta</strong> <span class="bump-price">R$ 14,90</span><br>Guia de suplementação e uma rotina de 30 dias já montada, pra você não decidir sozinho.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ticket-scallop bottom"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3B. DEPOIMENTOS -->
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="testimonials-head">
+        <span class="testimonial-badge">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.14-4.03 7.5-9 7.5-1.06 0-2.08-.15-3.02-.43L4 20l1.1-3.3C3.8 15.4 3 13.53 3 11.5 3 7.36 7.03 4 12 4s9 3.36 9 7.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Quem já testa em casa
+        </span>
+        <p class="testimonials-lead">Veja os relatos reais de tutoras que já estão dando mais saúde e mais anos de vida aos seus cães:</p>
+      </div>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track" tabindex="0" aria-label="Depoimentos">
+          <div class="carousel-slide"><img src="./depoimento-1.jpg" width="558" height="1000" loading="lazy" decoding="async" alt="Depoimento de Raquel Soares sobre o Manual do Cão Que Vive Mais"></div>
+          <div class="carousel-slide"><img src="./depoimento-2.jpg" width="558" height="1000" loading="lazy" decoding="async" alt="Depoimento de Luciana Peixoto sobre o Manual do Cão Que Vive Mais"></div>
+          <div class="carousel-slide"><img src="./depoimento-3.jpg" width="558" height="1000" loading="lazy" decoding="async" alt="Depoimento de Michelle Oliveira sobre o Manual do Cão Que Vive Mais"></div>
+          <div class="carousel-slide"><img src="./depoimento-4.jpg" width="558" height="1000" loading="lazy" decoding="async" alt="Depoimento de Jessica Domingues sobre o Manual do Cão Que Vive Mais"></div>
+        </div>
+        <button class="carousel-arrow prev" type="button" aria-label="Depoimento anterior"><svg viewBox="0 0 24 24" fill="none"><path d="M15 5L8 12L15 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="carousel-arrow next" type="button" aria-label="Próximo depoimento"><svg viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="carousel-dots"></div>
+        <p class="carousel-hint">⇄ Passando automaticamente · toque para pausar</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hairline">
+
+  <!-- 5. FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <div class="faq-head">
+        <h2>Perguntas frequentes</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Como funciona a entrega?<span class="plus"></span></summary>
+          <p class="faq-a">É 100% digital. Você recebe o link de acesso por e-mail em poucos minutos após a confirmação do pagamento, sem espera e sem correio.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vale para todas as raças?<span class="plus"></span></summary>
+          <p class="faq-a">Sim. As receitas foram pensadas para cães de qualquer raça, porte ou idade, com orientações de ajuste de porção conforme o peso do seu cão.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Posso devolver se não gostar?<span class="plus"></span></summary>
+          <p class="faq-a">Sim. Você tem 7 dias de garantia incondicional. Se não gostar por qualquer motivo, devolvemos 100% do valor pago.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como acessar o conteúdo?<span class="plus"></span></summary>
+          <p class="faq-a">Depois da compra, você recebe um link direto de acesso à área de membros, onde pode consultar ou baixar todo o material quando quiser.</p>
+        </details>
+        <details class="faq-item">
+          <summary>O manual substitui veterinário?<span class="plus"></span></summary>
+          <p class="faq-a">Não. O material tem caráter informativo e complementar; ele não substitui diagnóstico, tratamento ou acompanhamento de um médico-veterinário.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Qual a diferença deste para outros manuais?<span class="plus"></span></summary>
+          <p class="faq-a">Reunimos receitas com ingredientes fáceis de achar, quantidades claras por peso e um plano de 30 dias já pronto, sem enrolação e sem termos técnicos.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Por quanto tempo tenho acesso?<span class="plus"></span></summary>
+          <p class="faq-a">Para sempre. Uma única compra garante acesso imediato e permanente ao material, incluindo eventuais atualizações futuras.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Os ingredientes são fáceis de achar?<span class="plus"></span></summary>
+          <p class="faq-a">Sim. Todas as receitas usam ingredientes comuns, encontrados em qualquer mercado, feira ou hortifruti perto de você.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hairline">
+
+  <!-- 6. GARANTIA -->
+  <section class="guarantee">
+    <div class="wrap">
+      <div class="guarantee-card">
+        <img class="stamp-img" src="./selo-garantia.jpg" width="320" height="239" loading="lazy" decoding="async" alt="Selo de garantia de 7 dias">
+        <div>
+          <h2>Risco zero para você</h2>
+          <p>Se por qualquer motivo você não gostar do material, é só pedir. Devolvemos 100% do seu dinheiro, sem perguntas, dentro de 7 dias após a compra. O único risco aqui é adiar mais um passeio, mais uma tarde no sofá, mais um ano inteiro ao lado dele.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6B. CTA FINAL -->
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>Na próxima vez que ele estiver diferente, você já sabe o que cozinhar</h2>
+      <p class="final-lead">Manual completo + 3 bônus, por R$ 29,90 no Pix ou parcelado no cartão. Acesso na hora, direto no seu e-mail.</p>
+      <a href="/ir-checkout-v2.html" class="btn btn-primary">
+        QUERO O MANUAL AGORA
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <p class="final-guarantee-note">Garantia de 7 dias · devolução de 100% do valor</p>
+    </div>
+  </section>
+
+  <!-- 7. DISCLAIMER -->
+  <section class="disclaimer">
+    <div class="wrap">
+      <p class="box">Este material tem caráter informativo e não substitui avaliação de um médico-veterinário profissional.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <p class="fine">Conteúdo digital de caráter informativo. Não substitui avaliação veterinária profissional.</p>
+  </div>
+</footer>
+
+<!-- BARRA FIXA DE COMPRA -->
+<div class="buybar" role="region" aria-label="Comprar o manual">
+  <div class="buybar-inner">
+    <div class="buybar-price">
+      <span class="buybar-access"><svg><use href="#icon-check"/></svg>Garantia de 7 dias</span>
+      <span class="buybar-values"><span class="old mono">R$ 87</span><span class="new">R$ 29,90</span></span>
+    </div>
+    <a href="/ir-checkout-v2.html" class="btn btn-primary">
+      QUERO O MANUAL
+      <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<script>
+  // VSL: botão grande por cima do vídeo. Ao tocar, começa com som e mostra os controles.
+  (function () {
+    var box = document.querySelector('[data-vsl]');
+    if (!box) return;
+    var video = box.querySelector('video');
+    var btn = box.querySelector('.vsl-play');
+
+    btn.addEventListener('click', function () {
+      video.muted = false;
+      video.volume = 1;
+      video.controls = true;
+      btn.hidden = true;
+      var p = video.play();
+      if (p && p.catch) {
+        p.catch(function () {
+          // Se o navegador bloquear, volta o botão para a pessoa tentar de novo.
+          btn.hidden = false;
+          video.controls = false;
+        });
+      }
+    });
+
+    // Métrica: marca /play-vsl no Vercel Analytics quando o vídeo começa de verdade
+    // (evento "play" da própria tag <video>), uma única vez por visita.
+    var PLAY_KEY = 'vsl-play-marcado';
+    var playMarcado = false;
+    try { playMarcado = sessionStorage.getItem(PLAY_KEY) === '1'; } catch (e) {}
+    video.addEventListener('play', function () {
+      if (playMarcado) return;
+      playMarcado = true;
+      try { sessionStorage.setItem(PLAY_KEY, '1'); } catch (e) {}
+      history.pushState({}, '', location.pathname + '#play-vsl');
+    });
+
+    video.addEventListener('ended', function () {
+      video.controls = false;
+      btn.querySelector('.vsl-play-title').textContent = 'Assistir de novo';
+      btn.hidden = false;
+    });
+  })();
+</script>
+
+<script>
+  // Carrossel de depoimentos: passa sozinho a cada 4s; para quando a pessoa toca.
+  (function () {
+    var root = document.querySelector('[data-carousel]');
+    if (!root) return;
+    var track = root.querySelector('.carousel-track');
+    var slides = root.querySelectorAll('.carousel-slide');
+    var dotsBox = root.querySelector('.carousel-dots');
+    var hint = root.querySelector('.carousel-hint');
+    var current = 0, timer = null, paused = false;
+
+    slides.forEach(function (_, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Ver depoimento ' + (i + 1));
+      b.addEventListener('click', function () { pause(); go(i); });
+      dotsBox.appendChild(b);
+    });
+    var dots = dotsBox.querySelectorAll('button');
+
+    function mark(i) {
+      current = i;
+      dots.forEach(function (d, j) { d.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    }
+    function go(i) {
+      i = (i + slides.length) % slides.length;
+      track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+      mark(i);
+    }
+    function start() {
+      if (paused || timer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      timer = setInterval(function () { go(current + 1); }, 4000);
+    }
+    function pause() {
+      paused = true;
+      clearInterval(timer); timer = null;
+      if (hint) hint.textContent = 'Arraste para o lado para ver mais relatos';
+    }
+
+    root.querySelector('.prev').addEventListener('click', function () { pause(); go(current - 1); });
+    root.querySelector('.next').addEventListener('click', function () { pause(); go(current + 1); });
+    track.addEventListener('pointerdown', pause);
+    track.addEventListener('touchstart', pause, { passive: true });
+    track.addEventListener('scroll', function () {
+      var i = Math.round(track.scrollLeft / track.clientWidth);
+      if (i !== current && i >= 0 && i < slides.length) mark(i);
+    }, { passive: true });
+
+    // Só começa a passar quando os depoimentos aparecem na tela.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) start(); else { clearInterval(timer); timer = null; }
+        });
+      }, { threshold: 0.4 }).observe(root);
+    } else {
+      start();
+    }
+    mark(0);
+  })();
+</script>
+
+
+</body></html>
