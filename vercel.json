@@ -1,7 +1,25 @@
 {
   "cleanUrls": true,
   "redirects": [
-    { "source": "/", "destination": "/vsl", "permanent": false },
-    { "source": "/play-vsl", "destination": "/vsl", "permanent": false }
+    {
+      "source": "/",
+      "destination": "/vsl",
+      "permanent": false
+    },
+    {
+      "source": "/play-vsl",
+      "destination": "/vsl",
+      "permanent": false
+    },
+    {
+      "source": "/vsl-14-10",
+      "destination": "/vsl",
+      "permanent": false
+    },
+    {
+      "source": "/vsl-play-14-10",
+      "destination": "/vsl",
+      "permanent": false
+    }
   ]
 }

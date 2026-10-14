@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Redirecionando para o pagamento…</title>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      padding:24px;
+      box-sizing:border-box;
+      font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+      background:#FFFFFF;
+      color:#22301F;
+      text-align:center;
+    }
+    p{font-size:16px;margin:0;}
+    a{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:10px;
+      background:#3F7D50;
+      color:#FBF6EC;
+      font-weight:800;
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+  <p>Levando você para o pagamento seguro…</p>
+  <a href="https://pay.cakto.com.br/hi4nzdc">Se não abrir sozinho, toque aqui</a>
+
+  <script>
+    // Espera ~800ms para o Vercel Analytics registrar a visita e então vai para a Cakto.
+    setTimeout(function () {
+      window.location.replace("https://pay.cakto.com.br/hi4nzdc");
+    }, 800);
+  </script>
+</body>
+</html>
