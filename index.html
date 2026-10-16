@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <title>Manual do Cão Que Vive Mais</title>
-<link rel="preload" as="image" href="./poster.jpg">
+<link rel="preload" as="image" href="./poster-vsl-2.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap">
@@ -370,6 +370,63 @@
     display:block;
     aspect-ratio:9/16;
     background:#000;
+  }
+  .vsl-frame{position:relative;}
+  .vsl-play{
+    position:absolute;
+    inset:0;
+    width:100%;
+    border:none;
+    padding:24px;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:44px;
+    gap:14px;
+    color:#fff;
+    font-family:'Inter', sans-serif;
+    text-align:center;
+    background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 65%);
+    -webkit-tap-highlight-color:transparent;
+  }
+  .vsl-play[hidden]{display:none;}
+  .vsl-play-circle{
+    width:92px;height:92px;
+    border-radius:50%;
+    background:var(--copper);
+    border:4px solid #fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 0 0 rgba(63,125,80,0.7), 0 12px 28px -6px rgba(0,0,0,0.5);
+    animation:vsl-pulse 1.8s ease-out infinite;
+  }
+  .vsl-play-circle svg{width:44px;height:44px;margin-left:5px;}
+  .vsl-play-title{
+    font-family:'Poppins', sans-serif;
+    font-weight:900;
+    font-size:24px;
+    line-height:1.15;
+    text-shadow:0 2px 10px rgba(0,0,0,0.6);
+  }
+  .vsl-play-sound{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 16px;
+    border-radius:999px;
+    background:#fff;
+    color:var(--ink);
+    font-size:15px;
+    font-weight:800;
+    box-shadow:0 8px 20px -8px rgba(0,0,0,0.5);
+  }
+  .vsl-play-sound svg{width:20px;height:20px;flex:none;color:var(--copper-deep);}
+  .vsl-play:hover .vsl-play-circle{transform:scale(1.05);}
+  @keyframes vsl-pulse{
+    0%{box-shadow:0 0 0 0 rgba(63,125,80,0.7), 0 12px 28px -6px rgba(0,0,0,0.5);}
+    70%{box-shadow:0 0 0 22px rgba(63,125,80,0), 0 12px 28px -6px rgba(0,0,0,0.5);}
+    100%{box-shadow:0 0 0 0 rgba(63,125,80,0), 0 12px 28px -6px rgba(0,0,0,0.5);}
   }
   .vsl-caption{
     text-align:center;
@@ -804,17 +861,26 @@
   <!-- 1A. VSL -->
   <section class="vsl">
     <div class="wrap">
-      <div class="vsl-frame">
+      <div class="vsl-frame" data-vsl>
         <video
-          src="./vsl-viktor.mp4"
-          poster="./poster.jpg"
-          controls
+          src="./vsl-2.mp4"
+          poster="./poster-vsl-2.jpg"
           playsinline
           preload="metadata"
           width="540" height="960"
         ></video>
+        <button class="vsl-play" type="button" aria-label="Assistir o vídeo com som">
+          <span class="vsl-play-circle">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5L8 5.5Z" fill="currentColor"/></svg>
+          </span>
+          <span class="vsl-play-title">Toque aqui para assistir</span>
+          <span class="vsl-play-sound">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4Z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" fill="none"/></svg>
+            Aumente o volume do celular
+          </span>
+        </button>
       </div>
-      <p class="vsl-caption">▶ Toque para assistir · 2 minutos · ligue o som</p>
+      <p class="vsl-caption">🔊 O vídeo tem 2 minutos e 43 segundos. Assista com o som ligado.</p>
       <div class="hero-actions vsl-actions">
         <a href="/ir-checkout.html" class="btn btn-primary">
           QUERO O MANUAL AGORA
@@ -1046,6 +1112,37 @@
     </a>
   </div>
 </div>
+
+<script>
+  // VSL: botão grande por cima do vídeo. Ao tocar, começa com som e mostra os controles.
+  (function () {
+    var box = document.querySelector('[data-vsl]');
+    if (!box) return;
+    var video = box.querySelector('video');
+    var btn = box.querySelector('.vsl-play');
+
+    btn.addEventListener('click', function () {
+      video.muted = false;
+      video.volume = 1;
+      video.controls = true;
+      btn.hidden = true;
+      var p = video.play();
+      if (p && p.catch) {
+        p.catch(function () {
+          // Se o navegador bloquear, volta o botão para a pessoa tentar de novo.
+          btn.hidden = false;
+          video.controls = false;
+        });
+      }
+    });
+
+    video.addEventListener('ended', function () {
+      video.controls = false;
+      btn.querySelector('.vsl-play-title').textContent = 'Assistir de novo';
+      btn.hidden = false;
+    });
+  })();
+</script>
 
 <script>
   // Carrossel de depoimentos: passa sozinho a cada 4s; para quando a pessoa toca.
